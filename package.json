@@ -1,0 +1,35 @@
+{
+  "name": "article_api",
+  "version": "1.0.0",
+  "description": "simple api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node-dev index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salexey1990/article_api.git"
+  },
+  "author": "asirotkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salexey1990/article_api/issues"
+  },
+  "homepage": "https://github.com/salexey1990/article_api#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "mysql2": "^1.5.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.37.8",
+    "sequelize-cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "node-dev": "^3.1.3"
+  }
+}
