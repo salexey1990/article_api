@@ -4,6 +4,6 @@ module.exports = function isLoggedIn(req, res, next) {
      
         return next();
          
-    res.redirect('/signin');
+    res.send('you are signed out');
  
 }

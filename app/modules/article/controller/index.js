@@ -7,34 +7,54 @@ module.exports = class ArticleController {
         const order = req.query.order || 'desc';
         const resource = req.query.resource || 'title';
         const pattern = req.query.pattern;
-        const articles = await articleService.getArticles(sort, order, resource, pattern);
-        res.send(articles)
+        try {
+            const articles = await articleService.getArticles(sort, order, resource, pattern);
+            res.send(articles)
+        } catch (error) {
+            res.send('somthing went wrong...')
+        }
     }
 
     async getArticleById(req, res) {
         const articleId = req.params.id
-        const article = await articleService.getArticleById(articleId);
-        res.send(article)
+        try {
+            const article = await articleService.getArticleById(articleId);
+            res.send(article)
+        } catch (error) {
+            res.send('somthing went wrong...')
+        }
     }
 
     async createArticle(req, res) {
         const createParams = req.body
-        const article = await articleService.createArticle(createParams);
-        res.send(article)
+        try {
+            const article = await articleService.createArticle(createParams);
+            res.send(article)
+        } catch (error) {
+            res.send('somthing went wrong...')
+        }
     }
 
     async updateArticle(req, res) {
         const updateParams = req.body;
         const articleId = req.params.id;
-        const result = await articleService.updateArticle(updateParams, articleId);
-        res.send(result)
+        try {
+            const result = await articleService.updateArticle(updateParams, articleId);
+            res.send(result)
+        } catch (error) {
+            res.send('somthing went wrong...')
+        }
     }
 
     async deleteArticle(req, res) {
         const articleId = req.params.id
-        const result = await articleService.deleteArticle(id)
-        if (result == 1) {
-            res.send('ok')
+        try {
+            const result = await articleService.deleteArticle(articleId)
+            if (result == 1) {
+                res.send('ok')
+            }
+        } catch (error) {
+            res.send('somthing went wrong...')
         }
     }
 }
