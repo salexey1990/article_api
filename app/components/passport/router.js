@@ -14,10 +14,6 @@ authRouter.get('/signin', (req, res) => {
     res.render('signin')
 })
 
-authRouter.get('/dashboard', auth, (req, res) => {
-    res.render('dashboard')
-})
-
 //auth logic
 authRouter.get('/logout', (req, res) => {
     req.session.destroy((err) => {
@@ -26,7 +22,7 @@ authRouter.get('/logout', (req, res) => {
 })
 
 authRouter.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/dashboard',
+        successRedirect: '/api-docs',
 
         failureRedirect: '/signup'
     }
@@ -34,7 +30,7 @@ authRouter.post('/signup', passport.authenticate('local-signup', {
 ));
 
 authRouter.post('/signin', passport.authenticate('local-signin', {
-        successRedirect: '/dashboard',
+        successRedirect: '/api-docs',
 
         failureRedirect: '/signin'
     }
