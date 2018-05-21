@@ -1,4 +1,4 @@
-const Models = require('../../../../models');
+const Models = require('../../../components/database/index');
 const op = Models.Sequelize.Op;
 
 module.exports = class ArticleService {

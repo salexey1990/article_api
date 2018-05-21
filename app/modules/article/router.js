@@ -5,7 +5,7 @@ const auth = require('../../components/passport/authMiddleware')
 const Controller = require('./controller')
 const controller = new Controller()
 
-articleRouter.get('/articles', auth, controller.getArticles)
+articleRouter.get('/articles', controller.getArticles)
 
 articleRouter.get('/article/:id', auth, controller.getArticleById)
 

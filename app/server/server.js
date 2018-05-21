@@ -1,5 +1,5 @@
 const routes = require('./routes')
-const models = require('../../models')
+const models = require('../components/database')
 
 const express = require('express');
 const passport = require('passport')
